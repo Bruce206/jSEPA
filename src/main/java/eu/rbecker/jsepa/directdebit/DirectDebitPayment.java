@@ -5,7 +5,7 @@ package eu.rbecker.jsepa.directdebit;
 
 import eu.rbecker.jsepa.directdebit.util.SepaValidationException;
 import eu.rbecker.jsepa.sanitization.SepaStringSanitizer;
-import eu.rbecker.jsepa.directdebit.util.SepaUtil;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -52,7 +52,6 @@ public class DirectDebitPayment {
     }
 
     public void setDebitorIban(String debitorIban) throws SepaValidationException {
-        SepaUtil.validateIban(debitorIban);
         this.debitorIban = debitorIban;
     }
 
@@ -61,7 +60,6 @@ public class DirectDebitPayment {
     }
 
     public void setDebitorBic(String debitorBic) throws SepaValidationException {
-        SepaUtil.validateBic(debitorBic);
         this.debitorBic = debitorBic;
     }
 

@@ -2,13 +2,13 @@ package eu.rbecker.jsepa.transfer;
 
 import eu.rbecker.jsepa.directdebit.util.SepaValidationException;
 import eu.rbecker.jsepa.sanitization.SepaStringSanitizer;
-import eu.rbecker.jsepa.directdebit.util.SepaUtil;
+
+import javax.xml.datatype.DatatypeConfigurationException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import javax.xml.datatype.DatatypeConfigurationException;
 
 /**
  *
@@ -53,7 +53,7 @@ public class SepaTransferDocumentData {
         return result;
     }
 
-    public void addPayment(SepaTransferPayment payment) throws SepaValidationException {
+    public void addPayment(SepaTransferPayment payment) {
         payments.add(payment);
     }
 
@@ -61,8 +61,7 @@ public class SepaTransferDocumentData {
         return payerBic;
     }
 
-    public final void setPayerBic(String payerBic) throws SepaValidationException {
-        SepaUtil.validateBic(payerBic);
+    public final void setPayerBic(String payerBic) {
         this.payerBic = payerBic;
     }
 
@@ -70,8 +69,7 @@ public class SepaTransferDocumentData {
         return payerIban;
     }
 
-    public final void setPayerIban(String payerIban) throws SepaValidationException {
-        SepaUtil.validateIban(payerIban);
+    public final void setPayerIban(String payerIban) {
         this.payerIban = payerIban;
     }
 

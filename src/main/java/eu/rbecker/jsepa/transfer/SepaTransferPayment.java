@@ -3,9 +3,8 @@
  */
 package eu.rbecker.jsepa.transfer;
 
-import eu.rbecker.jsepa.directdebit.util.SepaValidationException;
 import eu.rbecker.jsepa.sanitization.SepaStringSanitizer;
-import eu.rbecker.jsepa.directdebit.util.SepaUtil;
+
 import java.math.BigDecimal;
 
 /**
@@ -38,8 +37,7 @@ public class SepaTransferPayment {
         return payeeIban;
     }
 
-    public void setPayeeIban(String payeeIban) throws SepaValidationException {
-        SepaUtil.validateIban(payeeIban);
+    public void setPayeeIban(String payeeIban) {
         this.payeeIban = payeeIban;
     }
 
@@ -47,8 +45,7 @@ public class SepaTransferPayment {
         return payeeBic;
     }
 
-    public void setPayeeBic(String payeeBic) throws SepaValidationException {
-        SepaUtil.validateBic(payeeBic);
+    public void setPayeeBic(String payeeBic) {
         this.payeeBic = payeeBic;
     }
 
